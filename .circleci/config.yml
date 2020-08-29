@@ -1,7 +1,19 @@
 version: 2.1
-orbs:
-  node: circleci/node@3.0.0
+jobs:
+  bobby:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "The Second Son"
+  sally:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "The Seven Son"
 workflows:
-  node-tests:
+  bobby-and-sally:
     jobs:
-      - node/test
+      - bobby
+      - sally
