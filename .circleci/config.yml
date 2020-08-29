@@ -12,8 +12,15 @@ jobs:
     steps:
       - checkout
       - run: echo "The Seven Son"
+  GodFather:
+    docker:
+      - image: circleci/ruby:2.4.1
+    steps:
+      - checkout
+      - run: echo "The God Fathers"
 workflows:
   bobby-and-sally:
     jobs:
       - bobby
       - sally
+      - GodFather
